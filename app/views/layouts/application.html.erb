@@ -9,6 +9,57 @@
   </head>
 
   <body>
-    <%= yield %>
+    
+
+
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-faded">
+        <a class="navbar-brand" href="/">Martin Family Orchards</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+      <div id="app" class="container">
+        <div id="navbarNavDropdown" class="navbar-collapse collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Our Story<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">The Farm<span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+              <% if current_user %>
+              <li class="nav-item active">
+                  <a class="nav-link" href="/users/sign_out">Logout<span class="sr-only">(current)</span></a>
+              </li><%=current_user.username %>
+              <li class="nav-item active">
+                  <a class="nav-link" href="/users/sign_out"></li><%=current_user.username %><span class="sr-only">(current)</span></a>
+              </li>
+              <% else %>
+              <li class="nav-item active">
+                  <a class="nav-link" href="/users/sign_in">Login<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item active">
+                  <a class="nav-link" href="/users/sign_up">Signup<span class="sr-only">(current)</span></a>
+              </li>
+
+              <% end %>
+
+            </ul>
+        </div>
+    </nav>
+</div>
+
+
+    <div class="container">
+      <%= yield %>
+    </div>
+
+
   </body>
 </html>

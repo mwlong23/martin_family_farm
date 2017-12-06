@@ -4,5 +4,5 @@ class Product < ApplicationRecord
   validates :description, :presence => true
   validates :weight, :presence => true
   validates :box_price, :presence => true
-  validates :weekly_deliver_cost, :presence => true
+  validates :weekly_delivery_price, :presence => true
 end
