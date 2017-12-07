@@ -5,9 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :reviews
-<<<<<<< HEAD
-  
-=======
->>>>>>> rollback
 
 end
